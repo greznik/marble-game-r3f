@@ -216,9 +216,12 @@ function Bounds({ length = 1 }) {
           scale={[4, 1.5, 0.3]}
           receiveShadow
         />
+        {/* Friction 1 - чтобы обеспечить трение с поверхностью */}
         <CuboidCollider
           args={[2, 0.1, 2 * length]}
           position={[0, -0.1, -(length * 2) + 2]}
+          restitution={0.2}
+          friction={1}
         />
       </RigidBody>
     </>
