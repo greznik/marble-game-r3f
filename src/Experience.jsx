@@ -7,7 +7,6 @@ export default function Experience() {
   return (
     <>
       <Physics>
-        <Debug />
         <Lights />
         <Level />
         <Player />
