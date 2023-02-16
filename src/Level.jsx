@@ -54,7 +54,7 @@ export function BlockEnd({ position = [0, 0, 0] }) {
         <Text
           position={[0, 1, 2]}
           font="./bebas-neue-v9-latin-regular.woff"
-          scale={2}
+          scale={1.9}
         >
           FINISH!
           <meshBasicMaterial toneMapped={false} />
