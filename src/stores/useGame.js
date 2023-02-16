@@ -7,7 +7,7 @@ export default create(
       startTime: 0,
       endTime: 0,
       blocksSeed: 0,
-      blocksCount: 10,
+      blocksCount: 15,
       phase: 'ready',
       start: () => {
         set((state) => {

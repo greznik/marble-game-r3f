@@ -1,9 +1,10 @@
-import { EffectComposer, DepthOfField, SSR } from '@react-three/postprocessing'
+import { EffectComposer, DepthOfField, SSR, Vignette } from '@react-three/postprocessing'
 
 export default function Effects() {
   return (
     <EffectComposer>
-      <SSR intensity={ 0.45 }
+      <Vignette eskil={false} offset={0.05} darkness={1} />
+      {/* <SSR intensity={ 0.45 }
         exponent={ 1 }
         distance={ 10 }
         fade={ 10 }
@@ -26,7 +27,7 @@ export default function Effects() {
         useNormalMap={ true }
         useRoughnessMap={ true }
         resolutionScale={ 1 }
-        velocityResolutionScale={ 1 }/>
+        velocityResolutionScale={ 1 }/> */}
       <DepthOfField focusDistance={0.01} focalLength={0.2} bokehScale={3} />
     </EffectComposer>
   )

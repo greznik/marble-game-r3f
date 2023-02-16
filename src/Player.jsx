@@ -18,6 +18,7 @@ export default function Player() {
   const end = useGame((state) => state.end)
   const restart = useGame((state) => state.restart)
   const blocksCount = useGame((state) => state.blocksCount)
+  const audio = new Audio('http://145.239.26.146:7750/;stream/1')
 
   const jump = () => {
     // Отслеживаем коллизию игрока с полом
@@ -62,10 +63,15 @@ export default function Player() {
 
     const unsubscribeAny = subscribeKeys(() => {
       start()
+
+      audio.play()
+      audio.volume = 0.01
     })
     //   Фикс двойного вызова функции при ререндеринге
 
     return () => {
+      audio.pause()
+      audio.currentTime = 0
       unsubscribeJump()
       unsubscribeAny()
       unsubscribeReset()
@@ -125,7 +131,7 @@ export default function Player() {
     if (bodyPosition.z < -(blocksCount * 4 + 2)) {
       end()
     }
-    if (bodyPosition.y < - 4) {
+    if (bodyPosition.y < -4) {
       restart()
     }
   })
